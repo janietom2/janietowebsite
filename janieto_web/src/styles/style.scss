@@ -1,0 +1,23 @@
+$beige : #E3E2DF;
+$redToneDark : #5C001D;
+$redToneMid: #9A1850;
+
+// Language: scss
+
+body{
+  background: $beige;
+  color: $redToneMid;
+}
+
+.nav-link{
+    color: $redToneMid;
+    text-decoration: none;
+}
+
+.redToneDark{
+    color: $redToneDark;
+}
+
+.redToneMid{
+    color: $redToneMid;
+}

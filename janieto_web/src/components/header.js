@@ -2,10 +2,11 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+import "../styles/style.css"
+
+const Header = ({ siteTitle, menuLinks }) => (
   <header
     style={{
-      background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -16,7 +17,7 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      {/* <h1 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
@@ -26,7 +27,33 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
+      </h1> */}
+
+      {/* navbar */}
+      <div>
+          <nav>
+
+            <ul style={{ display: "flex", flex: 1 }}>
+              {menuLinks.map(link => (
+                <li 
+                  key={link.name}
+                  style={{
+                    listStyle: `none`,
+                    padding: `1rem`
+                  }}
+                >
+                  <Link 
+                  to={link.link}
+                  className="nav-link" 
+                  >{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+
+          </nav>
+      </div> 
+      {/* navbar */}
+
     </div>
   </header>
 )
