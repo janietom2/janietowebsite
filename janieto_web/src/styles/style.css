@@ -1,11 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;400;700&family=Roboto:wght@100;300;400;700&display=swap");
 body {
   background: #E3E2DF;
   color: #9A1850;
+  font-family: "Heebo", sans-serif !important;
+}
+
+button:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.autorImg {
+  display: inline-block;
+  border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border: 3px solid #B50140;
+  -webkit-transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.mainHeader {
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+
+.boldText {
+  font-weight: bold;
 }
 
 .nav-link {
-  color: #9A1850;
+  color: #9A1850 !important;
   text-decoration: none;
+  padding: 0.2rem 0.5rem !important;
+  margin-right: 1.5rem;
+}
+
+.nav-link:hover {
+  background-color: #9A1850;
+  color: #E3E2DF !important;
+}
+
+.nav-link.active {
+  background-color: #9A1850;
+  color: #E3E2DF !important;
 }
 
 .redToneDark {
@@ -14,5 +52,116 @@ body {
 
 .redToneMid {
   color: #9A1850;
+}
+
+.layoutHeader {
+  margin: 30px 0 30px 0;
+}
+
+.footerIcon {
+  font-size: 1.5rem;
+}
+
+.AboutMe {
+  text-align: left;
+}
+
+.AboutMe > h1 {
+  font-weight: 400;
+  line-height: 2.2;
+}
+
+.AboutMe > hr {
+  height: 3px;
+  background-color: #9A1850;
+  opacity: 1;
+}
+
+.bodyText {
+  color: #000;
+}
+
+.iconTitle {
+  color: #000;
+  font-size: 1.6em;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+.personalLinks {
+  padding-left: .5rem;
+  color: #5C001D;
+}
+
+.personalLinks:hover {
+  padding-left: .5rem;
+  color: #9A1850;
+}
+
+.lightButton {
+  background-color: #E3AFBD;
+  color: #5C001D;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 0 !important;
+  outline: 0 !important;
+}
+
+.lightButton:hover, .lightButton:focus, .lightButton:active {
+  background-color: #8f4458;
+  color: #E3E2DF;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 0 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.lightButton:active:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: #9A1850;
+  color: #9A1850;
+}
+
+.navbar-toggler:focus {
+  -webkit-box-shadow: 0 0 0 0.1rem;
+          box-shadow: 0 0 0 0.1rem;
+}
+
+.navbar-collapse {
+  margin-top: 15px !important;
+}
+
+.redLightBox {
+  background-color: #B50140;
+  color: #E3E2DF;
+  padding: 20px 20px;
+  text-align: left;
+}
+
+.redDarkBox {
+  background-color: #5C001D;
+  color: #E3E2DF;
+  padding: 20px 20px;
+  text-align: left;
+}
+
+.margin50-top {
+  margin: 50px 0 0 0;
+}
+
+.margin50-bottom {
+  margin: 0 0 50px 0;
+}
+
+.margin10-top {
+  margin: 10px 0 0 0;
 }
 /*# sourceMappingURL=style.css.map */

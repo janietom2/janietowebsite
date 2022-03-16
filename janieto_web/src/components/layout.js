@@ -1,15 +1,11 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import {Container} from "react-bootstrap" 
 
 import Header from "./header"
+import MenuNav from "./menunav"
+import Footer from "./footer"
 import "../styles/style.css"
 
 const Layout = ({ children }) => {
@@ -29,25 +25,25 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header menuLinks={ data.site.siteMetadata.menuLinks } siteTitle={ data.site.siteMetadata?.title || `Title` } />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
+     {/* Header */}
+     <MenuNav menuLinks= { data.site.siteMetadata.menuLinks } />
+    <Header siteTitle={ data.site.siteMetadata?.title || `Title` } />
+     {/* Header */}
+
+      {/* Main Body */}
+      <Container>
+        <main className="m-auto text-center">{children}</main>
+      </Container>
+      {/* Main Body */}
+
+
+      {/* Footer */}
+      <Container 
+        style={{ marginTop: `50px` }}  
       >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+       <Footer />
+      </Container>
+      {/* Footer */}
     </>
   )
 }

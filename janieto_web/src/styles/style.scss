@@ -1,17 +1,83 @@
 $beige : #E3E2DF;
 $redToneDark : #5C001D;
 $redToneMid: #9A1850;
+$redToneLight: #B50140;
+$fontFamily: 'Heebo', sans-serif;
+
+$primaryBtn: #E3AFBD;
+$primaryBtnHover: #8f4458;
+
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;400;700&family=Roboto:wght@100;300;400;700&display=swap');
+
+@function smartMarginSelector($position, $value){
+    @if( $position == 'top') {
+        @return $value 0 0 0;
+    }
+    @else if( $position == 'right') {
+        @return 0 $value 0 0;
+    }
+    @else if( $position == 'bottom') {
+        @return 0 0 $value 0;
+    }
+    @else if( $position == 'left') {
+        @return 0 0 0 $value;
+    } @else {
+        @return 0 0 0 0;
+    }
+}
+// Functions
+@mixin smartMargin($position, $amount) {
+    margin: smartMarginSelector($position, $amount);
+}
 
 // Language: scss
-
 body{
   background: $beige;
   color: $redToneMid;
+  font-family: $fontFamily !important;
+}
+
+button:focus {
+    outline:none;
+    box-shadow: none;
+  }
+
+.autorImg{
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border: 3px solid $redToneLight;
+   -webkit-transform: translateZ(0);
+   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.mainHeader{
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+.boldText{
+    font-weight: bold;
 }
 
 .nav-link{
-    color: $redToneMid;
+    color: $redToneMid !important;
     text-decoration: none;
+    padding: 0.2rem 0.5rem !important;
+    margin-right: 1.5rem;
+}
+
+.nav-link:hover{
+    background-color: $redToneMid;
+    color: $beige !important;
+}
+
+.nav-link.active{
+    background-color: $redToneMid;
+    color: $beige !important;
 }
 
 .redToneDark{
@@ -20,4 +86,121 @@ body{
 
 .redToneMid{
     color: $redToneMid;
+}
+
+.layoutHeader{
+    margin: 30px 0 30px 0;
+}
+
+// Footer
+
+.footerIcon{
+    font-size: 1.5rem;
+} 
+
+// About Me (Page)
+
+.AboutMe{
+    text-align: left;
+}
+
+.AboutMe > h1{
+    font-weight: 400;
+    line-height: 2.2;
+}
+
+.AboutMe > hr {
+    height: 3px;
+    background-color: $redToneMid;
+    opacity: 1;
+}
+
+.bodyText{
+    color: #000;
+}
+
+// Icon
+.iconTitle{
+    color: #000;
+    font-size: 1.6em;
+    text-align: left;
+}
+
+// Links
+
+a {
+    text-decoration: none;
+}
+.personalLinks {
+    padding-left: .5rem;
+    color: $redToneDark;
+}
+
+.personalLinks:hover {
+    padding-left: .5rem;
+    color: $redToneMid;
+}
+
+// Buttons
+.lightButton{
+    background-color: $primaryBtn;
+    color: $redToneDark;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 0 !important;
+    outline: 0 !important;
+}
+
+.lightButton:hover, .lightButton:focus, .lightButton:active{
+    background-color: $primaryBtnHover;
+    color: $beige;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 0 !important;
+    box-shadow:none;
+}
+
+.lightButton:active:focus {
+    box-shadow:none;
+}
+
+.navbar-light .navbar-toggler{
+    border-color: $redToneMid;
+    color: $redToneMid;
+}
+
+.navbar-toggler:focus{
+    box-shadow: 0 0 0 0.1rem;
+}
+
+.navbar-collapse {
+    margin-top: 15px !important;
+}
+
+// Boxes
+.redLightBox{
+    background-color: $redToneLight;
+    color: $beige;
+    padding: 20px 20px;
+    text-align: left;
+}
+
+.redDarkBox{
+    background-color: $redToneDark;
+    color: $beige;
+    padding: 20px 20px;
+    text-align: left;
+}
+
+// Paddings
+.margin50-top{
+    @include smartMargin('top', 50px);
+}
+
+.margin50-bottom{
+    @include smartMargin('bottom', 50px);
+}
+
+.margin10-top{
+    @include smartMargin('top', 10px);
 }
